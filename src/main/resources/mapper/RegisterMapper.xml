@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.hjc.pdf.mapper.RegisterMapper" >
+  <resultMap id="BaseResultMap" type="cn.hjc.pdf.entity.Register" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" property="id" jdbcType="VARCHAR" />
+    <result column="is_register" property="isRegister" jdbcType="INTEGER" />
+    <result column="create_time" property="createTime" jdbcType="DATE" />
+    <result column="user_id" property="userId" jdbcType="VARCHAR" />
+  </resultMap>
+
+  <select id="getByUserId" parameterType="String" resultMap="BaseResultMap">
+     select * from register where to_days(create_time) = to_days(now()) and user_id = #{id};
+  </select>
+</mapper>
