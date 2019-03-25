@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.hjc.pdf.mapper.PdfMapper" >
+  <resultMap id="BaseResultMap" type="cn.hjc.pdf.entity.Pdf" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" property="id" jdbcType="VARCHAR" />
+    <result column="file_name" property="fileName" jdbcType="VARCHAR" />
+    <result column="file_size" property="fileSize" jdbcType="DOUBLE" />
+    <result column="file_path" property="filePath" jdbcType="VARCHAR" />
+    <result column="likes" property="likes" jdbcType="INTEGER" />
+    <result column="see" property="see" jdbcType="INTEGER" />
+    <result column="down" property="down" jdbcType="INTEGER" />
+    <result column="file_author" property="fileAuthor" jdbcType="INTEGER" />
+    <result column="upload_time" property="uploadTime" jdbcType="DATE" />
+    <result column="file_money" property="fileMoney" jdbcType="INTEGER" />
+    <result column="upload_user" property="uploadUser" jdbcType="VARCHAR" />
+    <result column="categories" property="categories" jdbcType="VARCHAR" />
+    <result column="descrice" property="descrice" jdbcType="VARCHAR" />
+  </resultMap>
+
+  <select id="selectOneList" parameterType="Map" resultMap="BaseResultMap" >
+    SELECT
+	p.*
+    FROM
+        pdf AS p,
+        pdf_user AS pu
+    WHERE
+        pu.pdf_id = p.id
+    AND pu.type = #{num}
+    AND pu.user_id = #{userId}
+  </select>
+</mapper>
