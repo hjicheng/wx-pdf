@@ -10,7 +10,9 @@ import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @Author: hjc
@@ -48,6 +50,13 @@ public class PdfService {
                 }
             }
         }
+        return list;
+    }
+    public List<Pdf> getOneList(String num,String userId){
+        Map<String,Object> map = new HashMap<>();
+        map.put("num",num);
+        map.put("userId",userId);
+        List<Pdf> list = pdfMapper.selectOneList(map);
         return list;
     }
     public Pdf getMessage(String id){
