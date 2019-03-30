@@ -18,17 +18,30 @@
     <result column="upload_user" property="uploadUser" jdbcType="VARCHAR" />
     <result column="categories" property="categories" jdbcType="VARCHAR" />
     <result column="descrice" property="descrice" jdbcType="VARCHAR" />
+    <result column="image" property="image" jdbcType="VARCHAR" />
   </resultMap>
 
   <select id="selectOneList" parameterType="Map" resultMap="BaseResultMap" >
     SELECT
 	p.*
     FROM
-        pdf AS p,
+        pdf_msg AS p,
         pdf_user AS pu
     WHERE
         pu.pdf_id = p.id
     AND pu.type = #{num}
     AND pu.user_id = #{userId}
   </select>
+
+  <select id="getUploadList" parameterType="String" resultMap="BaseResultMap" >
+    SELECT
+	p.*
+    FROM
+        pdf_msg AS p,
+        pdf_user AS pu
+    WHERE
+        pu.pdf_id = p.id
+    AND pu.user_id = #{userId}
+  </select>
+
 </mapper>

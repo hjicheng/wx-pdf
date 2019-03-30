@@ -11,4 +11,7 @@ public interface PdfMapper extends MyMapper<Pdf> {
 
     List<Pdf> selectOneList(Map<String,Object> map);
 
+    List<Pdf> getUploadList(String userId);
+
+
 }

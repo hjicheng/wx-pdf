@@ -7,7 +7,6 @@ import java.util.Date;
 
 @Data
 public class User {
-    @Id
     private String id;
 
     @Column(name = "nick_name")

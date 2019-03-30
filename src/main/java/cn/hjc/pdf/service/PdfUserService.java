@@ -38,4 +38,8 @@ public class PdfUserService {
         map.put("num",num);
         pdfUserMapper.deleteById(map);
     }
+
+    public PdfUser getByPdfUser(PdfUser pdfUser) {
+        return pdfUserMapper.selectOne(pdfUser);
+    }
 }

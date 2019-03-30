@@ -4,6 +4,7 @@ import lombok.Data;
 
 import javax.persistence.Column;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 /**
  * @Author: hjc
@@ -11,6 +12,7 @@ import javax.persistence.Id;
  * @Version 1.0
  */
 @Data
+@Table(name = "user_like")
 public class UserLike {
 
     @Id

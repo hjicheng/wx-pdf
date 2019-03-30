@@ -3,8 +3,10 @@ package cn.hjc.pdf.entity;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Data
+@Table(name = "pdf_msg")
 public class Pdf {
     @Id
     private String id;
@@ -36,10 +38,12 @@ public class Pdf {
     private String fileAuthor;
 
     @Column(name = "upload_time")
-    private String uploadTime;
+    private Date uploadTime;
 
     private String descrice;
 
     @Column(name = "is_like")
     private String isLike;
+
+    private String image;
 }

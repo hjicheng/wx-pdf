@@ -119,6 +119,7 @@ public class UserController {
                     user.setNickName(userInfoJSON.get("nickName").toString());
                     user.setOpenId(openid);
                     user.setMoney(0);
+                    user.setId(UUID.randomUUID().toString());
                     user.setCreateTime(new Date());
                     user.setId(UUID.randomUUID().toString());
                     userService.insert(user);
@@ -126,7 +127,7 @@ public class UserController {
                 Map<String, Object> userInfo = new HashMap();
                 userInfo.put("nickName", userInfoJSON.get("nickName"));
                 userInfo.put("avatarUrl", userInfoJSON.get("avatarUrl"));
-                userInfo.put("id",u.getId());
+                userInfo.put("id",user.getId());
                 if (u == null) {
                     userInfo.put("money", 0);
                 } else {

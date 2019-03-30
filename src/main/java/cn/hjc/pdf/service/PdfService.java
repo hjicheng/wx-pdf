@@ -52,6 +52,16 @@ public class PdfService {
         }
         return list;
     }
+
+    public void insert(Pdf pdf) {
+        pdfMapper.insert(pdf);
+    }
+
+    public List<Pdf> getUploadList(String userId){
+        List<Pdf> list = pdfMapper.getUploadList(userId);
+        return list;
+    }
+
     public List<Pdf> getOneList(String num,String userId){
         Map<String,Object> map = new HashMap<>();
         map.put("num",num);

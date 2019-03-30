@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>文件上传</title>
+</head>
+<body background="http://www.w3school.com.cn/clouds.gif">
+
+<hr/>
+<h2>文件上传</h2>
+
+<div>
+    <form class="form-horizontal" action="/pdf/uploads" enctype="multipart/form-data" method="post">
+
+        <div class="form-group">
+            <div class="input-group col-md-4">
+                <span class="input-group-addon"></span>
+                文件作者: <input type="text" name="fileAuthor"/></br/>
+            </div>
+            <div class="input-group col-md-4">
+                <span class="input-group-addon"></span>
+                文件描述: <input type="text" name="fileDesc"/></br/>
+            </div>
+            <div class="input-group col-md-4">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+                文件: <input type="file" name="file"/></br/>
+            </div>
+            <div class="input-group col-md-4">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+                文件封面: <input type="file" name="file"/></br/>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-4">
+                <div class="btn-group btn-group-justified" >
+                    <div class="btn-group" >
+                        <button type="submit" class="btn btn-success" id="submitbtn">
+                            <span class="glyphicon glyphicon-share"></span>&nbsp;文件上传</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+</body>
+</html>

@@ -5,5 +5,5 @@ import cn.hjc.pdf.util.MyMapper;
 
 public interface UserMapper extends MyMapper<User> {
 
-    User getByOpenId(String openid);
+    User getByOpenId(String openId);
 }
